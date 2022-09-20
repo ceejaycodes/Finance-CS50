@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div>
+  <div>
+    <h1>Hello {{ name }}</h1>
+  </div>
+    <h3>CS50 Finance Portfolio</h3>
+    <div>
+        <table class="table table-bordered table-stripped">
+            <thead>
+              <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for bal in balance %}
+              <tr>
+                 <td>{{ bal["stocks"] }}</td>
+                 <td>{{ bal["name"] }}</td>
+                 <td>{{ bal["stockamount" ]}}</td>
+                 <td>{{ bal["price"] | usd }}</td>
+                  <td>{{bal["buy_total"]| usd }}</td>
+              </tr>
+              {% endfor %}
+              <tfoot>
+                <tr>
+                  <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                  <td class="border-0 w-bold text-end">{{cash | usd}}</td>
+                </tr>
+                <tr>
+                  <td class="border-0 fw-bold text-end" colspan="4"><strong>Total</strong></td>
+                  <td class="border-0 w-bold text-end">{{ total | usd}}</td>
+                </tr>
+              </tfoot>
+            </tbody>
+          </table>
+    </div>
+</div>
+{% endblock %}

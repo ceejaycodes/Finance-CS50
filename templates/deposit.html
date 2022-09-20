@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    Deposit
+{% endblock %}
+
+{% block main %}
+<div>
+    <form class="deposit-form" action="/deposit" method="post">
+        <label><h1>How Much Cash Do You Want To Add</h1></label>
+        <div>
+        <input type="number" name="amount" placeholder="$$$" min="10" max="100000">
+        </div>
+        <div>
+        <button class="btn btn-primary" type="submit">Deposit</button>
+        </div>
+    </form>
+</div>
+{% endblock%}

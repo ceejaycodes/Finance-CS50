@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<form action="/register" method="post">
+    <h1>Register To CS50 Finance</h1>
+    <div>
+        <label id="username-label" >Username</label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" name="username" placeholder="Username" min="3" max="16">
+    </div>
+    <div>
+        <label id="password-label">password</label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="password" name="password" placeholder="Password" min="4">
+    </div>
+    <div>
+        <label id="confpassword-label">Confirm password</label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="password" name="confirmation" placeholder="passwords are case sensitive">
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+{% endblock %}

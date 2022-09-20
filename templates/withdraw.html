@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    Deposit
+{% endblock %}
+
+{% block main %}
+<div>
+    <form class="withdraw-form" action="/withdraw" method="post">
+        <label><h1>How Much Cash Do You Want To Withdraw</h1></label>
+        <div>
+        <input type="number" name="amount" placeholder="$$$" min="10" max="100000">
+        </div>
+        <div>
+        <button class="btn btn-primary" type="submit">Withdraw</button>
+        </div>
+    </form>
+</div>
+{% endblock%}

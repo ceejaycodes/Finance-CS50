@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div>
+    <table class="table table-striped table-dark table-bordered">
+        <thead scope="col"><h1>Search Results For {{symbol}}</h1></thead>
+        <tbody>
+            <tr>
+                <td>
+            {{quote_l.name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+            {{quote_l.price | usd}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+            {{quote_l.symbol}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
